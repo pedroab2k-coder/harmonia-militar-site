@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Academia da Harmonia Militar — Flashcards ESA Músico</title>
-  <meta name="description" content="Flashcards de Teoria Musical para ESA (Sargento Músico). Receba um deck de amostra e acelere sua aprovação." />
+  <title>Academia da Harmonia Militar — Flashcards ESA Musico</title>
+  <meta name="description" content="Flashcards de Teoria Musical para ESA (Sargento Musico). Receba um deck de amostra e acelere sua aprovacao." />
   <meta name="theme-color" content="#10271f" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,72 +16,62 @@
     a{color:inherit;text-decoration:none}
     .container{max-width:var(--max);margin:0 auto;padding:28px 20px}
     #bgCanvas{position:fixed;inset:0;z-index:-1;background:radial-gradient(1200px 800px at 8% -10%, rgba(46,94,78,.25), transparent 60%),radial-gradient(900px 700px at 110% 10%, rgba(27,61,47,.18), transparent 60%),var(--bg)}
-
     .nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(10px);background:rgba(16,39,31,.72);border-bottom:1px solid rgba(255,255,255,.08)}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 20px;max-width:var(--max);margin:0 auto}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 16px;max-width:var(--max);margin:0 auto}
     .brand{display:flex;align-items:center;gap:10px}
     .brand-badge{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:6px;background:linear-gradient(135deg,var(--primary),var(--primary-2));box-shadow:0 0 0 2px rgba(255,255,255,.08)}
     .brand-name{font-weight:900}
-    .mini-badge{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:6px;background:linear-gradient(135deg,var(--primary),var(--primary-2));box-shadow:0 0 0 2px rgba(255,255,255,.08)}
     .tabs{display:flex;gap:8px;flex-wrap:wrap}
-    .tab{border:1px solid rgba(255,255,255,.1);padding:10px 14px;border-radius:12px;cursor:pointer;font-weight:700;background:rgba(255,255,255,.05);color:#fff;transition:all .3s ease;text-shadow:0 0 4px rgba(255,255,255,.15)}
-    .tab:hover{background:rgba(255,255,255,.12);text-shadow:0 0 8px rgba(255,255,255,.3)}
-    .tab.active{background:linear-gradient(90deg,var(--primary),var(--primary-2));border-color:transparent;color:#fff;text-shadow:0 0 12px rgba(212,175,55,.65),0 0 24px rgba(46,94,78,.55)}
+    .tab{border:1px solid rgba(255,255,255,.1);padding:10px 14px;border-radius:12px;cursor:pointer;font-weight:700;background:rgba(255,255,255,.05);color:#fff;transition:all .25s ease}
+    .tab:hover{background:rgba(255,255,255,.12)} .tab.active{background:linear-gradient(90deg,var(--primary),var(--primary-2));border-color:transparent}
     .cta-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-    .btn{cursor:pointer;border:none;border-radius:12px;padding:12px 16px;font-weight:800;box-shadow:var(--shadow);transition:transform .15s ease}
+    .btn{cursor:pointer;border:none;border-radius:12px;padding:12px 16px;font-weight:800;box-shadow:var(--shadow);transition:transform .12s ease}
     .btn:hover{transform:translateY(-2px)} .btn.primary{background:linear-gradient(90deg,var(--accent),#e9c85e);color:#0f201a}
     .btn.ghost{background:rgba(255,255,255,.06);color:var(--ink);border:1px solid rgba(255,255,255,.08)}
-    .mobile-amostra{display:none;margin-left:6px;display:flex;align-items:center;gap:6px}
-    .mobile-amostra .btn{padding:8px 10px;border-radius:10px}
+    .mobile-amostra{display:none;margin-left:6px}
+    .mobile-amostra .btn{padding:8px 12px;border-radius:10px}
     .hamb{display:none;align-items:center;gap:8px;margin-left:6px}
     .hamb button{border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);color:#fff;border-radius:10px;padding:10px 12px;cursor:pointer}
     .mobile-panel{display:none;position:absolute;top:58px;right:10px;background:rgba(16,39,31,.98);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:12px;z-index:25;min-width:240px}
     .mobile-panel .tab{display:block;width:100%;text-align:center;margin:8px 0}
     .mobile-panel .btn{width:100%;margin-top:6px}
-
     section[role="tabpanel"]{display:none} section[role="tabpanel"].active{display:block}
-    .hero{padding:56px 0 20px;text-align:center}
+    .hero{padding:46px 0 12px;text-align:center}
     .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.12);padding:6px 12px;border-radius:999px;color:var(--muted);background:rgba(255,255,255,.06)}
-    .title{margin:16px 0 10px;font-weight:900;letter-spacing:-.02em;font-size:clamp(28px,5vw,44px)}
+    .title{margin:16px 0 10px;font-weight:900;letter-spacing:-.02em;font-size:clamp(28px,7vw,44px)}
     .sub{margin:0 auto;max-width:820px;color:var(--muted);font-weight:500;line-height:1.7}
-
-    .lead{margin:22px auto 0;background:linear-gradient(90deg,#123127,#0f2821);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:center}
-    .lead input{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);outline:none;color:#fff;padding:12px 14px;border-radius:10px;min-width:240px}
+    .lead{margin:18px auto 0;background:linear-gradient(90deg,#123127,#0f2821);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:14px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:center}
+    .lead input{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);outline:none;color:#fff;padding:14px 14px;border-radius:10px;min-width:260px;font-size:16px}
     .lead .ok{display:none;color:#b7ffcf;font-weight:700}
-
-    .product{margin:32px auto;display:grid;grid-template-columns:1.2fr .8fr;gap:20px}
+    .product{margin:28px auto;display:grid;grid-template-columns:1.2fr .8fr;gap:20px}
     .p-card{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
-    .price{font-weight:900;font-size:34px;color:var(--accent)}
     .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
     .gallery img{width:100%;height:120px;object-fit:cover;border-radius:12px;border:1px solid rgba(255,255,255,.12);cursor:pointer;background:#fff}
-
     .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:60;align-items:center;justify-content:center}
     .lightbox img{max-width:92vw;max-height:88vh;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.5);background:#fff}
     .lightbox.active{display:flex}
     .lightbox .close{position:absolute;top:18px;right:22px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:10px;padding:8px 12px;cursor:pointer}
-
-    .faq{margin:26px auto}.qa{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:16px 18px;border-radius:14px;margin:10px 0}
+    .faq{margin:20px auto}.qa{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:16px 18px;border-radius:14px;margin:10px 0}
     .bar{position:sticky;bottom:10px;z-index:50;display:flex;justify-content:center}
     .bar-inner{display:flex;align-items:center;gap:12px;background:rgba(18,38,31,.92);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(8px);padding:10px 12px;border-radius:999px;box-shadow:var(--shadow)}
     .bar-title{font-weight:700;display:flex;align-items:center;gap:8px}
-    footer{margin:32px 0 26px;color:var(--muted);text-align:center;font-size:14px}
-
+    footer{margin:28px 0 24px;color:var(--muted);text-align:center;font-size:14px}
+    .fab-whats{display:none;position:fixed;right:14px;bottom:80px;z-index:60}
+    .fab-whats a{display:flex;align-items:center;gap:10px;background:#32d951;color:#053b0e;font-weight:900;padding:12px 16px;border-radius:999px;box-shadow:0 12px 28px rgba(0,0,0,.25);border:1px solid rgba(0,0,0,.1)}
+    .fab-whats .dot{width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:#16c94a}
     @media (max-width: 900px){
-      .tabs{display:none}
-      .hamb{display:flex}
-      .brand-name{display:none}
-      .btn-ghost-amostra{display:none}
-      .mobile-amostra{display:flex}
+      .tabs{display:none} .hamb{display:flex} .brand-name{display:none}
+      .mobile-amostra{display:block} .container{padding:18px 14px}
+      .title{font-size:36px} .sub{text-align:center}
+      .hero{text-align:center;padding-top:36px}
       .product{grid-template-columns:1fr}
-      .p-card ul{padding-left:0;list-style:none}
-      .p-card li{margin-bottom:10px;font-size:16px}
-      .title{font-size:32px}
-      .sub{text-align:center}
-      .hero{text-align:center}
-      .container{padding:20px 16px}
+      .p-card ul{padding-left:0;list-style:none} .p-card li{margin-bottom:10px;font-size:16px}
       .gallery img{height:150px}
-      .mobile-panel{min-width:85vw; right:7.5vw}
+      .mobile-panel{min-width:85vw;right:7.5vw}
       .bar-title span.text{display:none}
+      .fab-whats{display:block}
+      .nav-inner{gap:8px}
+      .mobile-amostra .btn{font-size:14px}
     }
   </style>
 </head>
@@ -94,13 +84,12 @@
         <span class="brand-badge">🎖️</span>
         <span class="brand-name">Academia da Harmonia Militar</span>
         <div class="mobile-amostra">
-          <span class="mini-badge">🎖️</span>
           <button class="btn primary" id="amostraTop">Amostra ESA</button>
         </div>
       </div>
 
       <div class="tabs" id="tabsDesktop">
-        <button class="tab active" data-tab="home" role="tab" aria-selected="true">Início</button>
+        <button class="tab active" data-tab="home" role="tab" aria-selected="true">Inicio</button>
         <button class="tab" data-tab="produto" role="tab" aria-selected="false">Produto</button>
         <button class="tab" data-tab="amostra" role="tab" aria-selected="false">Amostra ESA</button>
         <button class="tab" data-tab="faq" role="tab" aria-selected="false">FAQ</button>
@@ -113,7 +102,7 @@
         <div class="hamb">
           <button id="hambBtn" aria-expanded="false" aria-controls="mobileMenu">☰</button>
           <div class="mobile-panel" id="mobileMenu">
-            <button class="tab active" data-tab="home" role="tab" aria-selected="true">Início</button>
+            <button class="tab active" data-tab="home" role="tab" aria-selected="true">Inicio</button>
             <button class="tab" data-tab="produto" role="tab" aria-selected="false">Produto</button>
             <button class="tab" data-tab="amostra" role="tab" aria-selected="false">Amostra ESA</button>
             <button class="tab" data-tab="faq" role="tab" aria-selected="false">FAQ</button>
@@ -127,12 +116,12 @@
 
   <section id="tab-home" role="tabpanel" class="active">
     <header class="container hero" aria-labelledby="hero-title">
-      <div class="badge">🎼 <strong>Área Musical</strong> • ESA (Sargento Músico)</div>
-      <h1 id="hero-title" class="title">Flashcards de Teoria Musical — ESA Músico</h1>
-      <p class="sub">Todo o conteúdo de <strong>Teoria Musical</strong> que cai na banca, organizado em cards para memorização ativa e revisão rápida. O resto é bônus.</p>
+      <div class="badge">🎼 <strong>Area Musical</strong> • ESA (Sargento Musico)</div>
+      <h1 id="hero-title" class="title">Flashcards de Teoria Musical — ESA Musico</h1>
+      <p class="sub">Todo o conteudo de <strong>Teoria Musical</strong> que cai na banca, organizado em cards para memorizacao ativa e revisao rapida. O resto e bonus.</p>
 
       <div class="lead">
-        <div style="text-align:center"><strong>💌 Receba um <u>deck de amostra</u> dos Flashcards ESA (Música)</strong><br><span style="color:var(--muted)">Teste antes de comprar</span></div>
+        <div style="text-align:center"><strong>💌 Receba um <u>deck de amostra</u> dos Flashcards ESA (Musica)</strong><br><span style="color:var(--muted)">Teste antes de comprar</span></div>
         <form id="leadForm" aria-label="Captura de e-mail">
           <input type="email" id="leadEmail" placeholder="seuemail@exemplo.com" required />
           <button class="btn primary" type="submit">Quero a amostra</button>
@@ -146,21 +135,21 @@
     <div class="container product" aria-labelledby="produto-title">
       <article class="p-card">
         <h2 id="produto-title" class="title" style="font-size:30px">Pacote Principal — Teoria Musical</h2>
-        <p class="sub" style="text-align:left">Foco total na área musical da ESA. Flashcards mapeados por assunto, nível e frequência da banca.</p>
+        <p class="sub" style="text-align:left">Foco total na area musical da ESA. Flashcards mapeados por assunto, nivel e frequencia da banca.</p>
         <ul>
           <li>📘 <strong>500+ flashcards de Teoria Musical</strong> (intervalos, escalas, ritmos, compasso, harmonia, leitura, etc.)</li>
-          <li>🎧 Exemplos comentados no padrão da banca</li>
-          <li>🧠 Rotas de revisão (SRS) para fixação</li>
-          <li>💾 Versão imprimível + versão para celular</li>
+          <li>🎧 Exemplos comentados no padrao da banca</li>
+          <li>🧠 Rotas de revisao (SRS) para fixacao</li>
+          <li>💾 Versao imprimivel + versao para celular</li>
         </ul>
-        <h3 style="margin:18px 0 8px">Bônus incluídos</h3>
+        <h3 style="margin:18px 0 8px">Bonus incluidos</h3>
         <ul>
-          <li>🗂️ <strong>Fórum de Dúvidas</strong> + <strong>2 simulados mensais</strong> até o dia da prova</li>
-          <li>🧪 <strong>Formulação de Recursos</strong> pós‑prova</li>
-          <li>📚 <strong>Bohumil Med (PDF)</strong> + <strong>Priolli — Harmonia Contemporânea</strong></li>
-          <li>🎼 <strong>5 Provas de Música</strong> comentadas (banca)</li>
+          <li>🗂️ <strong>Forum de Duvidas</strong> + <strong>2 simulados mensais</strong> ate o dia da prova</li>
+          <li>🧪 <strong>Formulacao de Recursos</strong> pos‑prova</li>
+          <li>📚 <strong>Bohumil Med (PDF)</strong> + <strong>Priolli — Harmonia Contemporanea</strong></li>
+          <li>🎼 <strong>5 Provas de Musica</strong> comentadas (banca)</li>
         </ul>
-        <p style="margin:6px 0 10px; color:var(--muted)">Preço especial de lançamento.</p>
+        <p style="margin:6px 0 10px; color:var(--muted)">Preco especial de lancamento.</p>
         <div class="cta-row">
           <button class="btn primary" id="buyCard">Comprar agora</button>
           <button class="btn ghost" data-switch="amostra">Receber amostra</button>
@@ -168,7 +157,7 @@
       </article>
 
       <aside class="p-card">
-        <h3 style="margin-top:0;text-align:center">Amostras rápidas</h3>
+        <h3 style="margin-top:0;text-align:center">Amostras rapidas</h3>
         <div class="gallery">
           <img src="assets/amostra1.png" alt="Amostra 1" data-big="assets/amostra1.png">
           <img src="assets/amostra2.png" alt="Amostra 2" data-big="assets/amostra2.png">
@@ -180,7 +169,7 @@
 
   <section id="tab-amostra" role="tabpanel">
     <div class="container">
-      <h2 class="title" style="font-size:30px;text-align:center">Receba o Deck de Amostra (Música)</h2>
+      <h2 class="title" style="font-size:30px;text-align:center">Receba o Deck de Amostra (Musica)</h2>
       <p class="sub" style="text-align:center">Preencha seu e‑mail e receba o deck de amostra completo.</p>
       <div class="gallery" style="grid-template-columns:repeat(2, 1fr)">
         <img src="assets/amostra1.png" alt="Amostra 1" data-big="assets/amostra1.png">
@@ -196,33 +185,34 @@
     </div>
   </section>
 
-  <section id="tab-faq" role="tabpanel">
-    <div class="container faq">
-      <div class="qa"><h4>É para qual área?</h4><p><strong>Área Musical — ESA (Sargento Músico)</strong>.</p></div>
-      <div class="qa"><h4>Digital ou físico?</h4><p>PDF imprimível + versão otimizada para celular.</p></div>
-      <div class="qa"><h4>Serve para iniciantes?</h4><p>Sim. Há trilhas progressivas e comentários.</p></div>
-      <div class="qa"><h4>Como recebo a amostra?</h4><p>Preencha o formulário. Enviamos o <strong>deck de amostra</strong> por e‑mail.</p></div>
-    </div>
-  </section>
-
   <div class="lightbox" id="lightbox">
-    <img id="lightbox-img" alt="Pré-visualização">
+    <img id="lightbox-img" alt="Pre-visualizacao">
     <button class="close" id="closeBox">Fechar</button>
   </div>
 
   <div class="bar" aria-hidden="false">
     <div class="bar-inner">
-      <span class="bar-title"><span class="mini-badge">🎖️</span><span class="text">Flashcards ESA Músico</span></span>
+      <span class="bar-title"><span class="brand-badge" style="width:22px;height:22px">🎖️</span><span class="text">Flashcards ESA Musico</span></span>
       <button class="btn primary" id="buySticky">Garantir agora</button>
-      <a class="btn ghost" href="policy.html">Política</a>
+      <a class="btn ghost" href="policy.html">Politica</a>
     </div>
   </div>
 
-  <footer class="container">© <span id="year"></span> • Academia da Harmonia Militar • <a href="policy.html">Política de Privacidade</a></footer>
+  <div class="fab-whats">
+    <a id="whatsLink" target="_blank" rel="noopener">
+      <span class="dot">💬</span> Conversar com professor
+    </a>
+  </div>
+
+  <footer class="container">© <span id="year"></span> • Academia da Harmonia Militar • <a href="policy.html">Politica de Privacidade</a></footer>
 
   <script>
     const CHECKOUT_URL = "https://pay.seu-gateway.com.br/SEU_ID?src=harmonia_militar";
     const LEAD_POST_URL = "https://formspree.io/f/xwpakeqr";
+    const WHATS_PHONE = "5561994304159";
+    const WHATS_TEXT = encodeURIComponent("Ola! Quero conversar com o professor sobre os Flashcards ESA (Musica).");
+    const whatsURL = "https://wa.me/" + WHATS_PHONE + "?text=" + WHATS_TEXT;
+    document.getElementById("whatsLink").href = whatsURL;
 
     const c = document.getElementById('bgCanvas'); const ctx = c.getContext('2d');
     let W,H,parts=[]; const N=70;
@@ -270,11 +260,11 @@
     }
     document.getElementById('leadForm').addEventListener('submit', async (e)=>{
       e.preventDefault(); const ok=document.getElementById('leadOk'); const email=document.getElementById('leadEmail').value.trim();
-      try{ await sendLead(email,'home'); ok.style.display='inline'; e.target.reset(); }catch{ alert('Não foi possível enviar agora. Tente novamente.'); }
+      try{ await sendLead(email,'home'); ok.style.display='inline'; e.target.reset(); }catch{ alert('Nao foi possivel enviar agora. Tente novamente.'); }
     });
     document.getElementById('leadForm2').addEventListener('submit', async (e)=>{
       e.preventDefault(); const ok=document.getElementById('leadOk2'); const email=document.getElementById('leadEmail2').value.trim();
-      try{ await sendLead(email,'amostra'); ok.style.display='inline'; e.target.reset(); }catch{ alert('Não foi possível enviar agora. Tente novamente.'); }
+      try{ await sendLead(email,'amostra'); ok.style.display='inline'; e.target.reset(); }catch{ alert('Nao foi possivel enviar agora. Tente novamente.'); }
     });
 
     function goCheckout(source){
