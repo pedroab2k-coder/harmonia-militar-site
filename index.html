@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Academia da Harmonia Militar — Flashcards ESA</title>
-  <meta name="description" content="Flashcards para ESA. Estude de forma objetiva. Receba um deck de amostra dos flashcards ESA." />
+  <title>Academia da Harmonia Militar — Flashcards ESA Músico</title>
+  <meta name="description" content="Flashcards de Teoria Musical para ESA (Sargento Músico). Receba um deck de amostra e acelere sua aprovação." />
   <meta name="theme-color" content="#10271f" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,6 +23,7 @@
     .brand{display:flex;align-items:center;gap:10px}
     .brand-badge{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:6px;background:linear-gradient(135deg,var(--primary),var(--primary-2));box-shadow:0 0 0 2px rgba(255,255,255,.08)}
     .brand-name{font-weight:900}
+    .mini-badge{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:6px;background:linear-gradient(135deg,var(--primary),var(--primary-2));box-shadow:0 0 0 2px rgba(255,255,255,.08)}
     .tabs{display:flex;gap:8px;flex-wrap:wrap}
     .tab{border:1px solid rgba(255,255,255,.1);padding:10px 14px;border-radius:12px;cursor:pointer;font-weight:700;background:rgba(255,255,255,.05);color:#fff;transition:all .3s ease;text-shadow:0 0 4px rgba(255,255,255,.15)}
     .tab:hover{background:rgba(255,255,255,.12);text-shadow:0 0 8px rgba(255,255,255,.3)}
@@ -32,10 +33,10 @@
     .btn{cursor:pointer;border:none;border-radius:12px;padding:12px 16px;font-weight:800;box-shadow:var(--shadow);transition:transform .15s ease}
     .btn:hover{transform:translateY(-2px)} .btn.primary{background:linear-gradient(90deg,var(--accent),#e9c85e);color:#0f201a}
     .btn.ghost{background:rgba(255,255,255,.06);color:var(--ink);border:1px solid rgba(255,255,255,.08)}
-    .btn-ghost-amostra{} /* desktop only; escondemos no mobile */
+    .btn-ghost-amostra{} /* desktop only */
 
-    /* Botão Amostra (mobile, ao lado da logo) */
-    .mobile-amostra{display:none;margin-left:6px}
+    /* Botão Amostra (mobile) */
+    .mobile-amostra{display:none;margin-left:6px;display:flex;align-items:center;gap:6px}
     .mobile-amostra .btn{padding:8px 10px;border-radius:10px}
 
     /* HAMBURGUER */
@@ -71,16 +72,16 @@
     .faq{margin:26px auto}.qa{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:16px 18px;border-radius:14px;margin:10px 0}
     .bar{position:sticky;bottom:10px;z-index:50;display:flex;justify-content:center}
     .bar-inner{display:flex;align-items:center;gap:12px;background:rgba(18,38,31,.92);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(8px);padding:10px 12px;border-radius:999px;box-shadow:var(--shadow)}
-    .bar-title{font-weight:700}
+    .bar-title{font-weight:700;display:flex;align-items:center;gap:8px}
     footer{margin:32px 0 26px;color:var(--muted);text-align:center;font-size:14px}
 
     /* MOBILE – otimização */
     @media (max-width: 900px){
-      .tabs{display:none}             /* esconder abas */
-      .hamb{display:flex}             /* mostrar hamburguer */
-      .brand-name{display:none}       /* nome some - deixa só a logo */
-      .btn-ghost-amostra{display:none}/* escondo botão de amostra do cabeçalho */
-      .mobile-amostra{display:block}  /* MOSTRA botão Amostra ao lado da logo */
+      .tabs{display:none}
+      .hamb{display:flex}
+      .brand-name{display:none}
+      .btn-ghost-amostra{display:none}
+      .mobile-amostra{display:flex} /* botão ao lado da logo */
       .product{grid-template-columns:1fr}
       .p-card ul{padding-left:0;list-style:none}
       .p-card li{margin-bottom:10px;font-size:16px}
@@ -90,7 +91,7 @@
       .container{padding:20px 16px}
       .gallery img{height:150px}
       .mobile-panel{min-width:85vw; right:7.5vw}
-      .bar-title{display:none}        /* remove o texto 'Flashcards ESA' do rodapé (pedido) */
+      .bar-title span.text{display:none} /* remove texto do sticky no mobile; mantém ícone */
     }
   </style>
 </head>
@@ -103,9 +104,8 @@
       <div class="brand">
         <span class="brand-badge">🎖️</span>
         <span class="brand-name">Academia da Harmonia Militar</span>
-
-        <!-- Botão Amostra ESA (apenas mobile) -->
         <div class="mobile-amostra">
+          <span class="mini-badge">🎖️</span>
           <button class="btn primary" id="amostraTop">Amostra ESA</button>
         </div>
       </div>
@@ -122,7 +122,6 @@
         <button class="btn ghost btn-ghost-amostra" data-switch="amostra">Receber amostra</button>
         <button class="btn primary" id="buyTop">Comprar</button>
 
-        <!-- Hamburguer ao lado do botão Comprar -->
         <div class="hamb">
           <button id="hambBtn" aria-expanded="false" aria-controls="mobileMenu">☰</button>
           <div class="mobile-panel" id="mobileMenu">
@@ -141,12 +140,12 @@
   <!-- HOME -->
   <section id="tab-home" role="tabpanel" class="active">
     <header class="container hero" aria-labelledby="hero-title">
-      <div class="badge">🎯 Preparação focada • Atualizado 2025</div>
-      <h1 id="hero-title" class="title">Flashcards ESA — Estudo Direto ao Ponto</h1>
-      <p class="sub">Domine os tópicos mais cobrados na <strong>ESA</strong> com flashcards objetivos. Memorização ativa, revisão rápida e prática diária.</p>
+      <div class="badge">🎼 <strong>Área Musical</strong> • ESA (Sargento Músico)</div>
+      <h1 id="hero-title" class="title">Flashcards de Teoria Musical — ESA Músico</h1>
+      <p class="sub">Todo o conteúdo de <strong>Teoria Musical</strong> que cai na banca, organizado em cards para memorização ativa e revisão rápida. O resto é bônus.</p>
 
       <div class="lead">
-        <div style="text-align:center"><strong>💌 Receba um <u>deck de amostra</u> dos Flashcards ESA</strong><br><span style="color:var(--muted)">Teste antes de comprar</span></div>
+        <div style="text-align:center"><strong>💌 Receba um <u>deck de amostra</u> dos Flashcards ESA (Música)</strong><br><span style="color:var(--muted)">Teste antes de comprar</span></div>
         <form id="leadForm" aria-label="Captura de e-mail">
           <input type="email" id="leadEmail" placeholder="seuemail@exemplo.com" required />
           <button class="btn primary" type="submit">Quero a amostra</button>
@@ -160,15 +159,21 @@
   <section id="tab-produto" role="tabpanel">
     <div class="container product" aria-labelledby="produto-title">
       <article class="p-card">
-        <h2 id="produto-title" class="title" style="font-size:30px">Flashcards ESA — Pacote Completo</h2>
-        <p class="sub" style="text-align:left">Conjunto de flashcards com marcações por nível e frequência, para memorização ativa e revisão acelerada.</p>
+        <h2 id="produto-title" class="title" style="font-size:30px">Pacote Principal — Teoria Musical</h2>
+        <p class="sub" style="text-align:left">Foco total na área musical da ESA. Flashcards mapeados por assunto, nível e frequência da banca.</p>
         <ul>
-          <li>📘 500+ cards prontos (<strong>Música, Português e Geografia</strong>)</li>
-          <li>🗂️ <strong>Bônus:</strong> Fórum de Dúvidas + 2 simulados mensais até o dia da prova</li>
-          <li>🧪 <strong>Bônus:</strong> Formulação de Recursos pós‑prova</li>
-          <li>🎖️ <strong>Bônus:</strong> Bohumil Med PDF + Priolli Harmonia Contemporânea</li>
+          <li>📘 <strong>500+ flashcards de Teoria Musical</strong> (intervalos, escalas, ritmos, compasso, harmonia, leitura, etc.)</li>
+          <li>🎧 Exemplos comentados no padrão da banca</li>
+          <li>🧠 Rotas de revisão (SRS) para fixação</li>
+          <li>💾 Versão imprimível + versão para celular</li>
         </ul>
-        <div class="price">R$ 147,90</div>
+        <h3 style="margin:18px 0 8px">Bônus incluídos</h3>
+        <ul>
+          <li>🗂️ <strong>Fórum de Dúvidas</strong> + <strong>2 simulados mensais</strong> até o dia da prova</li>
+          <li>🧪 <strong>Formulação de Recursos</strong> pós‑prova</li>
+          <li>📚 <strong>Bohumil Med (PDF)</strong> + <strong>Priolli — Harmonia Contemporânea</strong></li>
+          <li>🎼 <strong>5 Provas de Música</strong> comentadas (banca)</li>
+        </ul>
         <p style="margin:6px 0 10px; color:var(--muted)">Preço especial de lançamento.</p>
         <div class="cta-row">
           <button class="btn primary" id="buyCard">Comprar agora</button>
@@ -190,7 +195,7 @@
   <!-- AMOSTRA -->
   <section id="tab-amostra" role="tabpanel">
     <div class="container">
-      <h2 class="title" style="font-size:30px;text-align:center">Receba o Deck de Amostra</h2>
+      <h2 class="title" style="font-size:30px;text-align:center">Receba o Deck de Amostra (Música)</h2>
       <p class="sub" style="text-align:center">Preencha seu e‑mail e receba o deck de amostra completo.</p>
       <div class="gallery" style="grid-template-columns:repeat(2, 1fr)">
         <img src="assets/amostra1.png" alt="Amostra 1" data-big="assets/amostra1.png">
@@ -209,10 +214,10 @@
   <!-- FAQ -->
   <section id="tab-faq" role="tabpanel">
     <div class="container faq">
-      <div class="qa"><h4>É digital ou físico?</h4><p>Você recebe em PDF imprimível e versão otimizada para celular.</p></div>
-      <div class="qa"><h4>Serve para iniciantes?</h4><p>Sim. O pacote tem trilhas de estudo progressivas.</p></div>
-      <div class="qa"><h4>Posso estudar só com eles?</h4><p>Recomendamos combinar com questões e edital. Os flashcards aceleram a revisão.</p></div>
-      <div class="qa"><h4>Como recebo a amostra?</h4><p>Pelo formulário. Enviamos o <strong>deck de amostra</strong> por e‑mail após confirmação.</p></div>
+      <div class="qa"><h4>É para qual área?</h4><p><strong>Área Musical — ESA (Sargento Músico)</strong>.</p></div>
+      <div class="qa"><h4>Digital ou físico?</h4><p>PDF imprimível + versão otimizada para celular.</p></div>
+      <div class="qa"><h4>Serve para iniciantes?</h4><p>Sim. Há trilhas progressivas e comentários.</p></div>
+      <div class="qa"><h4>Como recebo a amostra?</h4><p>Preencha o formulário. Enviamos o <strong>deck de amostra</strong> por e‑mail.</p></div>
     </div>
   </section>
 
@@ -225,8 +230,8 @@
   <!-- Sticky Bar -->
   <div class="bar" aria-hidden="false">
     <div class="bar-inner">
-      <span class="bar-title">🎖️ Flashcards ESA</span>
-      <span style="opacity:.8">• R$ 147,90</span>
+      <!-- Ícone igual ao da Amostra ESA; sem preço -->
+      <span class="bar-title"><span class="mini-badge">🎖️</span><span class="text">Flashcards ESA Músico</span></span>
       <button class="btn primary" id="buySticky">Garantir agora</button>
       <a class="btn ghost" href="policy.html">Política</a>
     </div>
@@ -280,7 +285,7 @@
       }
     });
 
-    // Botão Amostra ao lado da logo (mobile)
+    // Atalhos
     document.getElementById('amostraTop').addEventListener('click', ()=> activateTab('amostra'));
 
     // Leads
@@ -301,7 +306,7 @@
     function goCheckout(source){
       const url=new URL(CHECKOUT_URL);
       url.searchParams.set('utm_source','landing'); url.searchParams.set('utm_medium','button');
-      url.searchParams.set('utm_campaign','flashcards_esa'); url.searchParams.set('utm_content',source);
+      url.searchParams.set('utm_campaign','flashcards_esa_musica'); url.searchParams.set('utm_content',source);
       location.assign(url);
     }
     document.getElementById('buyTop').addEventListener('click',()=>goCheckout('navbar_buy'));
