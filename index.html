@@ -21,35 +21,38 @@
     .nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(10px);background:rgba(16,39,31,.72);border-bottom:1px solid rgba(255,255,255,.08)}
     .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 20px;max-width:var(--max);margin:0 auto}
     .brand{font-weight:900;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
-    .brand-badge{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:6px;background:linear-gradient(135deg,var(--primary),var(--primary-2));box-shadow:0 0 0 2px rgba(255,255,255,.08)}
+    .brand-badge{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:6px;background:linear-gradient(135deg,var(--primary),var(--primary-2));box-shadow:0 0 0 2px rgba(255,255,255,.08)}
+    .brand-name{font-weight:900}
     .tabs{display:flex;gap:8px;flex-wrap:wrap}
     .tab{border:1px solid rgba(255,255,255,.1);padding:10px 14px;border-radius:12px;cursor:pointer;font-weight:700;background:rgba(255,255,255,.05);color:#fff;transition:all .3s ease;text-shadow:0 0 4px rgba(255,255,255,.15)}
     .tab:hover{background:rgba(255,255,255,.12);text-shadow:0 0 8px rgba(255,255,255,.3)}
     .tab.active{background:linear-gradient(90deg,var(--primary),var(--primary-2));border-color:transparent;color:#fff;text-shadow:0 0 12px rgba(212,175,55,.65),0 0 24px rgba(46,94,78,.55)}
 
-    .cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+    .cta-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
     .btn{cursor:pointer;border:none;border-radius:12px;padding:12px 16px;font-weight:800;box-shadow:var(--shadow);transition:transform .15s ease}
     .btn:hover{transform:translateY(-2px)} .btn.primary{background:linear-gradient(90deg,var(--accent),#e9c85e);color:#0f201a}
     .btn.ghost{background:rgba(255,255,255,.06);color:var(--ink);border:1px solid rgba(255,255,255,.08)}
+    .btn-ghost-amostra{} /* desktop only; escondemos no mobile */
 
     /* HAMBURGUER */
     .hamb{display:none;align-items:center;gap:8px;margin-left:6px}
     .hamb button{border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);color:#fff;border-radius:10px;padding:10px 12px;cursor:pointer}
-    .mobile-panel{display:none;position:absolute;top:58px;right:10px;background:rgba(16,39,31,.98);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:10px;z-index:25;min-width:220px}
-    .mobile-panel .tab{display:block;width:100%;text-align:left;margin:6px 0}
+    .mobile-panel{display:none;position:absolute;top:58px;right:10px;background:rgba(16,39,31,.98);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:12px;z-index:25;min-width:240px}
+    .mobile-panel .tab{display:block;width:100%;text-align:center;margin:8px 0}
+    .mobile-panel .btn{width:100%;margin-top:6px}
 
     /* TABS / PANELS */
     section[role="tabpanel"]{display:none} section[role="tabpanel"].active{display:block}
-    .hero{padding:64px 0 24px;text-align:center}
+    .hero{padding:56px 0 20px;text-align:center}
     .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.12);padding:6px 12px;border-radius:999px;color:var(--muted);background:rgba(255,255,255,.06)}
     .title{margin:16px 0 10px;font-weight:900;letter-spacing:-.02em;font-size:clamp(28px,5vw,44px)}
     .sub{margin:0 auto;max-width:820px;color:var(--muted);font-weight:500;line-height:1.7}
 
-    .lead{margin:24px auto 0;background:linear-gradient(90deg,#123127,#0f2821);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+    .lead{margin:22px auto 0;background:linear-gradient(90deg,#123127,#0f2821);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:center}
     .lead input{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);outline:none;color:#fff;padding:12px 14px;border-radius:10px;min-width:240px}
     .lead .ok{display:none;color:#b7ffcf;font-weight:700}
 
-    .product{margin:40px auto;display:grid;grid-template-columns:1.2fr .8fr;gap:20px}
+    .product{margin:32px auto;display:grid;grid-template-columns:1.2fr .8fr;gap:20px}
     .p-card{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
     .price{font-weight:900;font-size:34px;color:var(--accent)}
     .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
@@ -61,18 +64,26 @@
     .lightbox.active{display:flex}
     .lightbox .close{position:absolute;top:18px;right:22px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:10px;padding:8px 12px;cursor:pointer}
 
-    .faq{margin:30px auto}.qa{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:16px 18px;border-radius:14px;margin:10px 0}
+    .faq{margin:26px auto}.qa{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:16px 18px;border-radius:14px;margin:10px 0}
     .bar{position:sticky;bottom:10px;z-index:50;display:flex;justify-content:center}
     .bar-inner{display:flex;align-items:center;gap:12px;background:rgba(18,38,31,.92);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(8px);padding:10px 12px;border-radius:999px;box-shadow:var(--shadow)}
-    footer{margin:40px 0 30px;color:var(--muted);text-align:center;font-size:14px}
+    footer{margin:32px 0 26px;color:var(--muted);text-align:center;font-size:14px}
 
-    /* MOBILE tweaks */
+    /* MOBILE – otimização de conversão */
     @media (max-width: 900px){
-      .tabs{display:none} /* escondo as abas e mostro hamb */
-      .hamb{display:flex}
+      .tabs{display:none}             /* esconder abas */
+      .hamb{display:flex}             /* mostrar hamburguer */
+      .brand-name{display:none}       /* esconder nome — deixa só a logo */
+      .btn-ghost-amostra{display:none}/* esconder botão “Receber amostra” do cabeçalho */
       .product{grid-template-columns:1fr}
-      .gallery img{height:140px}
-      .nav-inner{gap:6px}
+      .p-card ul{padding-left:0;list-style:none}
+      .p-card li{margin-bottom:10px;font-size:16px}
+      .title{font-size:32px}
+      .sub{text-align:center}
+      .hero{text-align:center}
+      .container{padding:20px 16px}
+      .gallery img{height:150px}
+      .mobile-panel{min-width:85vw; right:7.5vw}
     }
   </style>
 </head>
@@ -82,8 +93,12 @@
   <!-- NAV -->
   <nav class="nav" role="tablist" aria-label="Menu principal">
     <div class="nav-inner">
-      <div class="brand"><span class="brand-badge">🎖️</span>Academia da Harmonia Militar</div>
+      <div class="brand">
+        <span class="brand-badge">🎖️</span>
+        <span class="brand-name">Academia da Harmonia Militar</span>
+      </div>
 
+      <!-- Desktop tabs -->
       <div class="tabs" id="tabsDesktop">
         <button class="tab active" data-tab="home" role="tab" aria-selected="true">Início</button>
         <button class="tab" data-tab="produto" role="tab" aria-selected="false">Produto</button>
@@ -92,7 +107,7 @@
       </div>
 
       <div class="cta-row">
-        <button class="btn ghost" data-switch="amostra">Receber amostra</button>
+        <button class="btn ghost btn-ghost-amostra" data-switch="amostra">Receber amostra</button>
         <button class="btn primary" id="buyTop">Comprar</button>
 
         <!-- Hamburguer ao lado do botão Comprar -->
@@ -103,6 +118,8 @@
             <button class="tab" data-tab="produto" role="tab" aria-selected="false">Produto</button>
             <button class="tab" data-tab="amostra" role="tab" aria-selected="false">Amostra ESA</button>
             <button class="tab" data-tab="faq" role="tab" aria-selected="false">FAQ</button>
+            <button class="btn ghost" data-switch="amostra">Receber amostra</button>
+            <button class="btn primary" id="buyMenu">Comprar agora</button>
           </div>
         </div>
       </div>
@@ -117,7 +134,7 @@
       <p class="sub">Domine os tópicos mais cobrados na <strong>ESA</strong> com flashcards objetivos. Memorização ativa, revisão rápida e prática diária.</p>
 
       <div class="lead">
-        <div><strong>💌 Receba um <u>deck de amostra</u> dos Flashcards ESA</strong><br><span style="color:var(--muted)">Conteúdo de exemplo para você testar o método</span></div>
+        <div style="text-align:center"><strong>💌 Receba um <u>deck de amostra</u> dos Flashcards ESA</strong><br><span style="color:var(--muted)">Teste antes de comprar</span></div>
         <form id="leadForm" aria-label="Captura de e-mail">
           <input type="email" id="leadEmail" placeholder="seuemail@exemplo.com" required />
           <button class="btn primary" type="submit">Quero a amostra</button>
@@ -132,7 +149,7 @@
     <div class="container product" aria-labelledby="produto-title">
       <article class="p-card">
         <h2 id="produto-title" class="title" style="font-size:30px">Flashcards ESA — Pacote Completo</h2>
-        <p class="sub">Conjunto de flashcards com marcações por nível e frequência, para memorização ativa e revisão acelerada.</p>
+        <p class="sub" style="text-align:left">Conjunto de flashcards com marcações por nível e frequência, para memorização ativa e revisão acelerada.</p>
         <ul>
           <li>📘 500+ cards prontos (<strong>Música, Português e Geografia</strong>)</li>
           <li>🗂️ <strong>Bônus:</strong> Fórum de Dúvidas + 2 simulados mensais até o dia da prova</li>
@@ -148,12 +165,12 @@
       </article>
 
       <aside class="p-card">
-        <h3 style="margin-top:0">Amostras rápidas</h3>
+        <h3 style="margin-top:0;text-align:center">Amostras rápidas</h3>
         <div class="gallery">
           <img src="assets/amostra1.png" alt="Amostra 1" data-big="assets/amostra1.png">
           <img src="assets/amostra2.png" alt="Amostra 2" data-big="assets/amostra2.png">
         </div>
-        <p class="sub" style="margin-top:10px">Clique nas imagens para visualizar maior. Na aba “Amostra ESA” você solicita o deck completo.</p>
+        <p class="sub" style="margin-top:10px;text-align:center">Toque nas miniaturas para ver maior.</p>
       </aside>
     </div>
   </section>
@@ -161,8 +178,8 @@
   <!-- AMOSTRA -->
   <section id="tab-amostra" role="tabpanel">
     <div class="container">
-      <h2 class="title" style="font-size:30px">Receba o Deck de Amostra</h2>
-      <p class="sub">Veja abaixo 2 exemplos de cards. Para receber o deck de amostra completo no seu e‑mail, preencha o formulário.</p>
+      <h2 class="title" style="font-size:30px;text-align:center">Receba o Deck de Amostra</h2>
+      <p class="sub" style="text-align:center">Preencha seu e‑mail e receba o deck de amostra completo.</p>
       <div class="gallery" style="grid-template-columns:repeat(2, 1fr)">
         <img src="assets/amostra1.png" alt="Amostra 1" data-big="assets/amostra1.png">
         <img src="assets/amostra2.png" alt="Amostra 2" data-big="assets/amostra2.png">
@@ -173,7 +190,6 @@
           <button class="btn primary" type="submit">Enviar deck de amostra</button>
           <span class="ok" id="leadOk2">Enviado! Veja seu e‑mail 📬</span>
         </form>
-        <div style="color:var(--muted);font-size:14px">Prometemos não enviar spam. Você pode sair quando quiser.</div>
       </div>
     </div>
   </section>
@@ -210,7 +226,7 @@
     const CHECKOUT_URL = "https://pay.seu-gateway.com.br/SEU_ID?src=harmonia_militar";
     const LEAD_POST_URL = "https://formspree.io/f/xwpakeqr";
 
-    // FONDO
+    // Fundo animado
     const c = document.getElementById('bgCanvas'); const ctx = c.getContext('2d');
     let W,H,parts=[]; const N=70;
     function resize(){W=c.width=innerWidth;H=c.height=innerHeight} addEventListener('resize',resize); resize();
@@ -222,7 +238,7 @@
         if(d<140){ctx.strokeStyle='rgba(212,175,55,'+(1-d/140)*.35+')';ctx.lineWidth=.7;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}}
       requestAnimationFrame(step);} requestAnimationFrame(step);
 
-    // DETECÇÃO MOBILE/DESKTOP (pode usar para ajustes finos)
+    // Detecção (Mobile/Desktop)
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 900;
     document.body.dataset.device = isMobile ? 'mobile' : 'desktop';
 
@@ -232,8 +248,7 @@
     function activateTab(name){
       tabs.forEach(t=>{const is=t.dataset.tab===name;t.classList.toggle('active',is);t.setAttribute('aria-selected',is)});
       Object.entries(panels).forEach(([k,el])=>el.classList.toggle('active',k===name));
-      // fechar menu mobile ao escolher
-      mobileMenu.classList.remove('open'); mobileMenu.style.display='none'; hambBtn.setAttribute('aria-expanded','false');
+      mobileMenu.style.display='none'; hambBtn.setAttribute('aria-expanded','false');
     }
     document.querySelectorAll('[data-switch]').forEach(b=>b.addEventListener('click',()=>activateTab(b.dataset.switch)));
     tabs.forEach(t=>t.addEventListener('click',()=>activateTab(t.dataset.tab)));
@@ -274,8 +289,9 @@
       location.assign(url);
     }
     document.getElementById('buyTop').addEventListener('click',()=>goCheckout('navbar_buy'));
-    document.getElementById('buyCard').addEventListener('click',()=>goCheckout('product_buy'));
-    document.getElementById('buySticky').addEventListener('click',()=>goCheckout('sticky_buy'));
+    document.getElementById('buyCard')?.addEventListener('click',()=>goCheckout('product_buy'));
+    document.getElementById('buySticky')?.addEventListener('click',()=>goCheckout('sticky_buy'));
+    document.getElementById('buyMenu')?.addEventListener('click',()=>goCheckout('menu_buy'));
 
     // Lightbox
     const box=document.getElementById('lightbox'); const img=document.getElementById('lightbox-img'); const closeBtn=document.getElementById('closeBox');
