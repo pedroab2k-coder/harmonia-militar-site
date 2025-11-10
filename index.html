@@ -20,7 +20,7 @@
     /* NAV */
     .nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(10px);background:rgba(16,39,31,.72);border-bottom:1px solid rgba(255,255,255,.08)}
     .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 20px;max-width:var(--max);margin:0 auto}
-    .brand{font-weight:900;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
+    .brand{display:flex;align-items:center;gap:10px}
     .brand-badge{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:6px;background:linear-gradient(135deg,var(--primary),var(--primary-2));box-shadow:0 0 0 2px rgba(255,255,255,.08)}
     .brand-name{font-weight:900}
     .tabs{display:flex;gap:8px;flex-wrap:wrap}
@@ -33,6 +33,10 @@
     .btn:hover{transform:translateY(-2px)} .btn.primary{background:linear-gradient(90deg,var(--accent),#e9c85e);color:#0f201a}
     .btn.ghost{background:rgba(255,255,255,.06);color:var(--ink);border:1px solid rgba(255,255,255,.08)}
     .btn-ghost-amostra{} /* desktop only; escondemos no mobile */
+
+    /* Botão Amostra (mobile, ao lado da logo) */
+    .mobile-amostra{display:none;margin-left:6px}
+    .mobile-amostra .btn{padding:8px 10px;border-radius:10px}
 
     /* HAMBURGUER */
     .hamb{display:none;align-items:center;gap:8px;margin-left:6px}
@@ -67,14 +71,16 @@
     .faq{margin:26px auto}.qa{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:16px 18px;border-radius:14px;margin:10px 0}
     .bar{position:sticky;bottom:10px;z-index:50;display:flex;justify-content:center}
     .bar-inner{display:flex;align-items:center;gap:12px;background:rgba(18,38,31,.92);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(8px);padding:10px 12px;border-radius:999px;box-shadow:var(--shadow)}
+    .bar-title{font-weight:700}
     footer{margin:32px 0 26px;color:var(--muted);text-align:center;font-size:14px}
 
-    /* MOBILE – otimização de conversão */
+    /* MOBILE – otimização */
     @media (max-width: 900px){
       .tabs{display:none}             /* esconder abas */
       .hamb{display:flex}             /* mostrar hamburguer */
-      .brand-name{display:none}       /* esconder nome — deixa só a logo */
-      .btn-ghost-amostra{display:none}/* esconder botão “Receber amostra” do cabeçalho */
+      .brand-name{display:none}       /* nome some - deixa só a logo */
+      .btn-ghost-amostra{display:none}/* escondo botão de amostra do cabeçalho */
+      .mobile-amostra{display:block}  /* MOSTRA botão Amostra ao lado da logo */
       .product{grid-template-columns:1fr}
       .p-card ul{padding-left:0;list-style:none}
       .p-card li{margin-bottom:10px;font-size:16px}
@@ -84,6 +90,7 @@
       .container{padding:20px 16px}
       .gallery img{height:150px}
       .mobile-panel{min-width:85vw; right:7.5vw}
+      .bar-title{display:none}        /* remove o texto 'Flashcards ESA' do rodapé (pedido) */
     }
   </style>
 </head>
@@ -96,6 +103,11 @@
       <div class="brand">
         <span class="brand-badge">🎖️</span>
         <span class="brand-name">Academia da Harmonia Militar</span>
+
+        <!-- Botão Amostra ESA (apenas mobile) -->
+        <div class="mobile-amostra">
+          <button class="btn primary" id="amostraTop">Amostra ESA</button>
+        </div>
       </div>
 
       <!-- Desktop tabs -->
@@ -213,7 +225,7 @@
   <!-- Sticky Bar -->
   <div class="bar" aria-hidden="false">
     <div class="bar-inner">
-      <span style="font-weight:700">🎖️ Flashcards ESA</span>
+      <span class="bar-title">🎖️ Flashcards ESA</span>
       <span style="opacity:.8">• R$ 147,90</span>
       <button class="btn primary" id="buySticky">Garantir agora</button>
       <a class="btn ghost" href="policy.html">Política</a>
@@ -238,7 +250,7 @@
         if(d<140){ctx.strokeStyle='rgba(212,175,55,'+(1-d/140)*.35+')';ctx.lineWidth=.7;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}}
       requestAnimationFrame(step);} requestAnimationFrame(step);
 
-    // Detecção (Mobile/Desktop)
+    // Detecção Mobile/Desktop
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 900;
     document.body.dataset.device = isMobile ? 'mobile' : 'desktop';
 
@@ -249,6 +261,7 @@
       tabs.forEach(t=>{const is=t.dataset.tab===name;t.classList.toggle('active',is);t.setAttribute('aria-selected',is)});
       Object.entries(panels).forEach(([k,el])=>el.classList.toggle('active',k===name));
       mobileMenu.style.display='none'; hambBtn.setAttribute('aria-expanded','false');
+      if(name==='amostra'){document.getElementById('tab-amostra').scrollIntoView({behavior:'smooth'});}
     }
     document.querySelectorAll('[data-switch]').forEach(b=>b.addEventListener('click',()=>activateTab(b.dataset.switch)));
     tabs.forEach(t=>t.addEventListener('click',()=>activateTab(t.dataset.tab)));
@@ -266,6 +279,9 @@
         mobileMenu.style.display='none'; hambBtn.setAttribute('aria-expanded','false');
       }
     });
+
+    // Botão Amostra ao lado da logo (mobile)
+    document.getElementById('amostraTop').addEventListener('click', ()=> activateTab('amostra'));
 
     // Leads
     async function sendLead(email, origem){
